@@ -1,6 +1,7 @@
 
 :root {
-    /* Farben definieren */
+    --customRed: #E00A1C;
+    --customYellow: #F9EA2E;
 }
 
 @font-face {
@@ -51,6 +52,43 @@ body {
 body > * {
     font-size: 1.2rem;
     padding: 0 1rem;
+}
+
+#pageWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: repeat(5, auto);
+}
+
+nav {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+}
+
+header {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+}
+
+header img {
+    width: clamp(10rem, 30%, 30rem);
+}
+
+main {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+}
+
+aside {
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+}
+
+footer {
+    grid-column: 1 / 3;
 }
 
 /*----------------------------------------------------------------------------*/
