@@ -1,0 +1,75 @@
+
+:root {
+    /* Farben definieren */
+}
+
+@font-face {
+    font-family: 'AsapCondensed';
+    src: url('../font/AsapCondensed-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AsapCondensed';
+    src: url('../font/AsapCondensed-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AsapCondensed';
+    src: url('../font/AsapCondensed-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AsapCondensed';
+    src: url('../font/AsapCondensed-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'AsapCondensed', sans-serif;
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+body > * {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+}
+
+/*----------------------------------------------------------------------------*/
+/* Layout für Viewports ab 640px (40em)                                       */
+/*----------------------------------------------------------------------------*/
+@media screen and (min-width: 40em) {
+    /* TODO: */
+}
+
+/*----------------------------------------------------------------------------*/
+/* Layout für Viewports ab 1024px (64em)                                      */
+/*----------------------------------------------------------------------------*/
+@media screen and (min-width: 64em) {
+    /* TODO: */
+}
+
+/*----------------------------------------------------------------------------*/
+/* Layout für Viewports ab 1280px (80em)                                      */
+/*----------------------------------------------------------------------------*/
+@media screen and (min-width: 80em) {
+    /* TODO: */
+}
