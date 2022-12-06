@@ -2,6 +2,7 @@
 :root {
     --customRed: #E00A1C;
     --customYellow: #F9EA2E;
+    --defaultBorderRadius: 1rem;
 }
 
 @font-face {
@@ -89,6 +90,47 @@ aside {
 
 footer {
     grid-column: 1 / 3;
+}
+
+#importantContainer {
+    position: fixed;
+    top: 0;
+    right: -15rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 0 1rem;
+    border-radius: var(--defaultBorderRadius) 0 0 var(--defaultBorderRadius);
+
+    color: var(--customYellow);
+    background-color: var(--customRed);
+
+    transition: right 250ms ease-in-out;
+}
+#importantContainer strong{
+    font-size: 2rem;
+}
+
+#impCSwitch {
+    cursor: pointer;
+}
+
+#impCSwitch * {
+    pointer-events: none;
+}
+
+#impCSwitch > img {
+    width: 3rem;
+    margin: 2rem 0;
+}
+
+#impCSwitch > div {
+    font-size: 1.5rem;
+    font-weight: 700;
+    transform: rotate(-90deg);
 }
 
 /*----------------------------------------------------------------------------*/
