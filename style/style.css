@@ -71,10 +71,10 @@ nav {
     grid-row: 1 / 2;
 }
 
-header {
-    /* grid-column: 1 / 3;
-    grid-row: 2 / 3; */
+header#pageHeader {
     display: none;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
 }
 
 header img {
@@ -289,7 +289,10 @@ nav {
 
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--customRed)
+    font-style: italic;
+    color: var(--customRed);
+
+    transition: opacity 250ms ease-in-out;
 }
 
 nav img {
@@ -301,14 +304,53 @@ nav img {
 /* Layout für Viewports ab 640px (40em)                                       */
 /*----------------------------------------------------------------------------*/
 @media screen and (min-width: 40em) {
-    /* TODO: */
+    #smallNavHeader {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    header#pageHeader {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+
+        padding-right: 5rem;
+        opacity: 1;
+    }
+
+    #pageTitle {
+        font-size: clamp(3rem, 10vw, 10rem);
+        font-weight: 700;
+        font-style: italic;
+
+        color: var(--customRed);
+    }
+
+    main {
+        grid-row: 3 / 4;
+    }
 }
 
 /*----------------------------------------------------------------------------*/
 /* Layout für Viewports ab 1024px (64em)                                      */
 /*----------------------------------------------------------------------------*/
 @media screen and (min-width: 64em) {
-    /* TODO: */
+    #navButton {
+        display: none;
+    }
+
+    #pageNav {
+        height: 3rem;
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .pageNavLink {
+        font-size: 1.75rem;
+    }
 }
 
 /*----------------------------------------------------------------------------*/
