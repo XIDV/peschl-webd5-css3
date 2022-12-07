@@ -2,7 +2,9 @@
 :root {
     --customRed: #E00A1C;
     --customYellow: #F9EA2E;
+    --customGlas: hsla(1, 0%, 100%, .5);
     --defaultBorderRadius: 1rem;
+
 }
 
 @font-face {
@@ -131,6 +133,113 @@ footer {
     font-size: 1.5rem;
     font-weight: 700;
     transform: rotate(-90deg);
+}
+
+nav {
+    position: sticky;
+    top: 0;
+
+    background-color: var(--customGlas);
+    backdrop-filter: blur(1rem);
+    border-radius: 0 0 var(--defaultBorderRadius) var(--defaultBorderRadius);
+    box-shadow: 0 .1rem .5rem var(--customRed);
+}
+
+#navButton {
+    position: relative;
+    left: 1rem;
+    top: 1rem;
+    width: 4rem;
+    height: 4rem;
+
+    border: solid .2rem var(--customRed);
+    border-radius: var(--defaultBorderRadius);
+
+    cursor: pointer;
+}
+
+#buttonElement {
+    position: absolute;
+    width: 3.5rem;
+    height: .6rem;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-color: darkgray;
+    border-radius: .2rem;
+}
+
+#buttonElement::before,
+#buttonElement::after {
+    content: '';
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    
+    background-color: darkgray;
+    border-radius: .2rem;
+}
+
+#buttonElement::before {
+    top: -150%;
+
+}
+
+#buttonElement::after {
+    top: 150%;
+
+}
+
+#buttonElement,
+#buttonElement::before,
+#buttonElement::after {
+    transition: background-color 250ms ease-in-out;
+}
+
+#navButton:hover > #buttonElement,
+#navButton:hover > #buttonElement::before,
+#navButton:hover > #buttonElement::after {
+    background-color: var(--customRed);
+}
+
+#pageNav {
+    height: 0;
+
+    list-style: none;
+    padding: 0 1rem 0 1rem;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    transition: height 250ms ease-in-out;
+    overflow: hidden;
+}
+
+.pageNavLink {
+    display: block;
+
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 1.5em;
+
+    border-bottom: solid .2rem transparent;
+
+    transition: color 250ms ease-in-out, border 250ms ease-in-out;
+}
+
+.pageNavLink:link,
+.pageNavLink:visited {
+    color: darkgray;
+}
+
+.pageNavLink:hover {
+    color: var(--customRed);
+    border-bottom: solid .2rem var(--customRed);
 }
 
 /*----------------------------------------------------------------------------*/
