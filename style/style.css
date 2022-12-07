@@ -327,6 +327,10 @@ nav img {
         font-style: italic;
 
         color: var(--customRed);
+        -webkit-text-stroke-width: .2vw;
+        -webkit-text-stroke-color: var(--customYellow);
+        -moz-text-stroke-width: .2vw;
+        -moz-text-stroke-color: var(--customYellow);
     }
 
     main {
@@ -350,6 +354,16 @@ nav img {
 
     .pageNavLink {
         font-size: 1.75rem;
+    }
+
+    main {
+        grid-column: 1 / 2;
+        grid-row: 3 / 5;
+    }
+
+    aside {
+        grid-column: 2 / 3;
+        grid-row: 3 / 5;
     }
 }
 
