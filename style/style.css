@@ -96,28 +96,49 @@ footer {
 
 #importantContainer {
     position: fixed;
-    top: 0;
+    top: 10rem;
     right: -15rem;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(auto, 2);
 
     padding: 0 1rem;
-    border-radius: var(--defaultBorderRadius) 0 0 var(--defaultBorderRadius);
 
     color: var(--customYellow);
-    background-color: var(--customRed);
 
     transition: right 250ms ease-in-out;
 }
 #importantContainer strong{
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
 #impCSwitch {
+    position: relative;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
     cursor: pointer;
+
+    background-color: var(--customRed);
+    border-radius: var(--defaultBorderRadius) 0 0 var(--defaultBorderRadius);
+}
+
+#impCSwitch::after {
+    content: '';
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: transparent;
+    border-radius: 50%;
+    right: 0rem;
+    bottom: -2.5rem;
+    box-shadow: 1rem -1rem var(--customRed);
 }
 
 #impCSwitch * {
@@ -126,13 +147,22 @@ footer {
 
 #impCSwitch > img {
     width: 3rem;
-    margin: 2rem 0;
+    margin: 0;
 }
 
 #impCSwitch > div {
     font-size: 1.5rem;
     font-weight: 700;
-    transform: rotate(-90deg);
+}
+
+#impContent {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+
+    padding: 0 0 0 1rem;
+
+    background-color: var(--customRed);
+    border-radius: 0 var(--defaultBorderRadius) var(--defaultBorderRadius) var(--defaultBorderRadius);
 }
 
 nav {
