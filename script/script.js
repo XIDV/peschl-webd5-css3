@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', dcl => {
 
 
     navButton.addEventListener('click', e => toggleMenu());
+    navButton.addEventListener('touchstart', e => toggleMenu());
 
     iccb.addEventListener('click', e => toggleICCB('mouse'));
     iccb.addEventListener('touchstart', e => toggleICCB('touch'));

@@ -197,6 +197,7 @@ nav {
 #buttonElement::before,
 #buttonElement::after {
     transition: background-color 250ms ease-in-out;
+    pointer-events: none;
 }
 
 #navButton:hover > #buttonElement,
