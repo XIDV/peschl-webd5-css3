@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', dcl => {
     const iccb = document.querySelector('#impCSwitch');
     const icc = document.querySelector('#importantContainer');
 
+    const loginContainer = document.querySelector('#loginContainer');
 
     navButton.addEventListener('click', e => toggleMenu());
     navButton.addEventListener('touchstart', e => toggleMenu());
@@ -16,8 +17,15 @@ document.addEventListener('DOMContentLoaded', dcl => {
     window.addEventListener('resize', e => setDynamicElements())
 
     function setDynamicElements() {
-        window.innerWidth >= 1024 ? pageNav.style.height = '3rem' : pageNav.style.height = '0';
-        window.innerWidth >= 1920 ? icc.style.right = '0' : icc.style.right = '-15rem';
+        const innerWidth = window.innerWidth;
+        if(innerWidth >= 1024) {
+            pageNav.style.height = '3rem';
+            loginContainer.open = true; // hier gibts ....
+        } else {
+            pageNav.style.height = '0';
+            loginContainer.open = false; // Problem
+        }
+        innerWidth >= 1920 ? icc.style.right = '0' : icc.style.right = '-15rem';
     }
 
     let navStatus = false;

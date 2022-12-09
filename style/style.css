@@ -3,28 +3,28 @@
 
 /* Optional DSGVO-konform -------------------------------------------------- */
 /* @font-face {
-    font-family: 'AsapCondensed';
+    font-family: 'Asap Condensed';
     src: url('../font/AsapCondensed-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'AsapCondensed';
+    font-family: 'Asap Condensed';
     src: url('../font/AsapCondensed-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'AsapCondensed';
+    font-family: 'Asap Condensed';
     src: url('../font/AsapCondensed-ExtraBoldItalic.ttf') format('truetype');
     font-weight: 900;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'AsapCondensed';
+    font-family: 'Asap Condensed';
     src: url('../font/AsapCondensed-Italic.ttf') format('truetype');
     font-weight: 400;
     font-style: italic;
@@ -77,10 +77,9 @@ body > * {
     padding: 0 1rem;
 }
 
-nav {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
-}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Anordnung der #pageWrapper-Elemente */
 
 header#pageHeader {
     display: none;
@@ -95,16 +94,21 @@ header img {
     width: clamp(10rem, 30%, 30rem);
 }
 
-main {
+nav {
     grid-column: 1 / 3;
-    grid-row: 2 / 4;
-
-    background-color: white;
+    grid-row: 1 / 2;
 }
 
 aside {
     grid-column: 1 / 3;
-    grid-row: 4 / 5;
+    grid-row: 2 / 3;
+
+    background-color: white;
+}
+
+main {
+    grid-column: 1 / 3;
+    grid-row: 3 / 5;
 
     background-color: white;
 }
@@ -114,6 +118,10 @@ footer {
 
     background-color: white;
 }
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Konfiguration des #importantContainer */
 
 #importantContainer {
     position: fixed;
@@ -185,6 +193,10 @@ footer {
     background-color: var(--customRed);
     border-radius: 0 var(--defaultBorderRadius) var(--defaultBorderRadius) var(--defaultBorderRadius);
 }
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Konfiguration der primären Seitennavigation */
 
 nav {
     position: sticky;
@@ -319,6 +331,10 @@ nav img {
     height: 5rem;
 }
 
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Konfiguration von main */
+
 h1, h2, h3, h4 {
     color: var(--customBlueTwo);
     font-weight: 700;
@@ -357,27 +373,45 @@ h3 {
     width: 100%;
 }
 
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Konfiguration von aside (Login-Formular) */
+
+.assideTitle {
+    color: var(--customBlueTwo);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 1em 0 .5em 0;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
 .formElementGroup {
     display: flex;
     flex-direction: column;
-    margin: 0 0 1rem 0;
 }
 
 .formElementGroup > * {
     width: 10rem;
 
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
 label {
-    margin: 0 0 .25rem 0;
+    margin: 0 0 .5em 0;
 }
 
 input {
-    height: 2.5rem;
+    height: 1.5em;
 
-    padding: .5rem;
+    padding: .25rem;
 
     border: solid thin var(--cusotmBlueOne);
     border-radius: var(--defaultBorderRadius);
@@ -392,27 +426,28 @@ input:focus {
 }
 
 button[type='submit'] {
-    width: 10rem;
+    width: 10em;
 
     color: white;
     background: var(--customBGgradient);
-    font-size: 2rem;
+    font-size: 1rem;
     
     border: none;
     border-radius: var(--defaultBorderRadius);
-    padding: .25rem;
-    margin: 0 0 2rem 0;
+    padding: .5em;
     cursor: pointer;
     transition: all 250ms ease-in-out;
 }
 
 button[type='submit']:hover {
+    border: solid thin white;
     box-shadow: .125rem .125rem .5rem var(--cusotmBlueOne);
-    transform: scale(105%);
+    transform: scale(102%);
 }
 
 .loginLink {
     display: block;
+    font-size: .75rem;
     text-align: center;
     text-decoration: none;
 
@@ -429,6 +464,10 @@ button[type='submit']:hover {
     color: var(--customBlueTwo);
     text-decoration: underline;
 }
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
 
 footer {
     display: flex;
@@ -461,6 +500,7 @@ footer {
 .footerLink:hover {
     text-decoration: underline;
 }
+
 
 
 /*----------------------------------------------------------------------------*/
@@ -500,8 +540,17 @@ footer {
         -moz-text-stroke-color: var(--customYellow);
     }
 
-    main {
+    aside {
         grid-row: 3 / 4;
+    }
+
+    #loginForm {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    main {
+        grid-row: 4 / 5;
     }
 
     .contentText {
@@ -547,12 +596,22 @@ footer {
         grid-row: 3 / 5;
     }
 
-    .formElementGroup > * {
+
+    #loginForm {
         width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
+    .formElementGroup,
+    .formElementGroup > *,
     button[type='submit'] {
-        width: 100%;
+        width: 90%;
+    }
+
+    .formElementGroup {
+        margin: 0 0 0 1rem;
     }
 }
 
