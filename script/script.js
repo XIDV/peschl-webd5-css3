@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', dcl => {
 
     const navButton = document.querySelector('#navButton');
     const pageNav = document.querySelector('#pageNav');
-
     const iccb = document.querySelector('#impCSwitch');
     const icc = document.querySelector('#importantContainer');
-
     const loginContainer = document.querySelector('#loginContainer');
+    const pageFooter = document.querySelector('footer');
+
 
     navButton.addEventListener('click', e => toggleMenu());
     navButton.addEventListener('touchstart', e => toggleMenu());
@@ -15,15 +15,19 @@ document.addEventListener('DOMContentLoaded', dcl => {
     iccb.addEventListener('touchstart', e => toggleICCB());
 
     window.addEventListener('resize', e => setDynamicElements())
+    setDynamicElements();
 
     function setDynamicElements() {
         const innerWidth = window.innerWidth;
         if(innerWidth >= 1024) {
             pageNav.style.height = '3rem';
-            loginContainer.open = true; // hier gibts ....
+            loginContainer.open = true;
+            pageFooter.style.position = 'sticky';
+            pageFooter.style.bottom = '0';
         } else {
             pageNav.style.height = '0';
-            loginContainer.open = false; // Problem
+            loginContainer.open = false;
+            pageFooter.style.position = 'static';
         }
         innerWidth >= 1920 ? icc.style.right = '0' : icc.style.right = '-15rem';
     }
