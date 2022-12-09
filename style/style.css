@@ -90,8 +90,12 @@ header#pageHeader {
     transition: all 250ms ease-in-out;
 }
 
+.logoLink {
+    display: block;
+}
+
 header img {
-    width: clamp(10rem, 30%, 30rem);
+    width: clamp(10rem, 30vw, 30rem);
 }
 
 nav {
