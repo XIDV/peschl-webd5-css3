@@ -343,7 +343,7 @@ h1, h2, h3, h4 {
     color: var(--customBlueTwo);
     font-weight: 700;
     font-style: italic;
-
+    line-height: 1.25em;
     margin: 1em 0 .5em 0;
 }
 
