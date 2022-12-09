@@ -385,12 +385,57 @@ h3 {
 }
 
 article {
+    position: relative;
     width: 100%;
     padding: 0 1rem;
-    border: solid thin var(--customRed);
     border-radius: var(--defaultBorderRadius);
     box-shadow: .125rem .125rem .25rem var(--customRed);
-    
+    overflow: hidden;
+}
+
+.expandButton {
+    position: absolute;
+    bottom: -2rem;
+    right: -2rem;
+
+    transform: rotate(-45deg);
+
+    width: 4rem;
+    height: 4rem;
+
+    background-color: var(--customRed);
+    border-radius: var(--defaultBorderRadius);
+    cursor: pointer;
+}
+
+.expandButtonElement {
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translateX(-50%) rotate(-45deg);
+    width: .75rem;
+    height: .125rem;
+
+    background-color: white;
+    pointer-events: none;
+    transition: transform 250ms ease-in-out;
+}
+
+.expandButtonElement::after {
+    content: '';
+    position: absolute;
+
+    transform: rotate(-90deg);
+
+    width: 100%;
+    height: 100%;
+
+    background-color: white;
+    pointer-events: none;
+}
+
+.expandButton:hover > .expandButtonElement {
+    transform: translateX(-50%) rotate(180deg);
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
