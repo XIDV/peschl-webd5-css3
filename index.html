@@ -152,7 +152,49 @@
                     </header>
                     <div class="sectionContent">
                         <form action="" id="contactForm">
-                            <!-- some fancy formular stuff -->
+                            <div class="fegContainer">
+                                <div class="formElementGroup">
+                                    <label for="female">Frau</label>
+                                    <input type="radio" name="gender" id="female">
+                                </div>
+                                <div class="formElementGroup">
+                                    <label for="male">Herr</label>
+                                    <input type="radio" name="gender" id="male">
+                                </div>
+                                <div class="formElementGroup">
+                                    <label for="male">divers</label>
+                                    <input type="radio" name="gender" id="divers">
+
+                                </div>
+                            </div>
+                            <div class="fegContainer">
+                                <div class="formElementGroup">
+                                    <label for="fName">Vorname</label>
+                                    <input type="text" id="fName" placeholder="Ihr Vorname">
+                                </div>
+                                <div class="formElementGroup">
+                                    <label for="lName">Nachname *</label>
+                                    <input type="text" id="lName" required placeholder="Ihr Nachname">
+                                </div>
+                            </div>
+                            <div class="fegContainer">
+                                <div class="formElementGroup">
+                                    <label for="mailOne">E-Mail *</label>
+                                    <input type="email" name="mailOne" id="mailOne" required placeholder="z.B. example@email.de">
+                                </div>
+                                <div class="formElementGroup">
+                                    <label for="mailTwo">E-Mail bestätigen *</label>
+                                    <input type="email" name="mailTwo" id="mailTwo" required placeholder="z.B. example@email.de">
+                                </div>
+                            </div>
+                            <div class="formElementGroup">
+                                <label for="message">Ihre Nachricht *</label>
+                                <textarea name="message" id="message" placeholder="Hallo ..."></textarea>
+                            </div>
+                            <div class="formElementGroup">
+                                <button type="submit">Nachricht senden</button>
+                                <button type="reset">Abbrechen</button>
+                            </div>
                         </form>
                     </div>
                 </section>

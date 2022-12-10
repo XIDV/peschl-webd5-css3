@@ -438,6 +438,67 @@ article {
     transform: translateX(-50%) rotate(180deg);
 }
 
+
+#contactForm {
+    width: 100%;
+    grid-column: 1 / 3;
+}
+
+#contactForm > .formElementGroup:last-of-type {
+    flex-direction: row;
+    justify-content: center;
+    margin: 2rem 0 2rem 0;
+}
+
+#contactForm .fegContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0 0 1.5rem 0;
+}
+
+#contactForm .fegContainer:first-of-type {
+    flex-direction: row;
+}
+
+#contactForm .fegContainer:not(:first-of-type) {
+    justify-content: space-between;
+}
+
+#contactForm .formElementGroup {
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: center; */
+    gap: .5rem;
+}
+
+#contactForm input[type='text'],
+#contactForm input[type='email'],
+#contactForm textarea {
+    font-size: 1.5rem;
+}
+
+#contactForm textarea {
+    font-family: 'Asap Condensed', sans-serif;
+    height: 6rem;
+}
+
+button {
+    width: 10em;
+    color: white;
+
+    background-color: var(--customRed);
+
+    border: none;
+    border-radius: var(--defaultBorderRadius);
+    padding: .5em;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Konfiguration von aside (Login-Formular) */
 
@@ -461,14 +522,14 @@ article {
     flex-direction: column;
 }
 
-.formElementGroup > * {
+#loginForm .formElementGroup > * {
     width: 10rem;
 
     font-size: 1rem;
     font-weight: bold;
 }
 
-label {
+#loginForm label {
     margin: 0 0 .5em 0;
 }
 
@@ -483,24 +544,15 @@ input {
     transition: all 250ms ease-in-out;
 }
 
-input:focus {
+input:not([type='radio']):focus {
     outline: none;
     border: solid .25rem var(--customBlueTwo);
     box-shadow: .125rem .125rem .5rem var(--cusotmBlueOne);
 }
 
 button[type='submit'] {
-    width: 10em;
-
-    color: white;
     background: var(--customBGgradient);
     font-size: 1rem;
-    
-    border: none;
-    border-radius: var(--defaultBorderRadius);
-    padding: .5em;
-    cursor: pointer;
-    transition: all 250ms ease-in-out;
 }
 
 button[type='submit']:hover {
