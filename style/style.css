@@ -70,7 +70,7 @@ body > * {
 
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: repeat(5, auto);    
+    grid-template-rows: repeat(5, auto);
 }
 
 #pageWrapper > * {
@@ -447,6 +447,7 @@ article {
 #contactForm > .formElementGroup:last-of-type {
     flex-direction: row;
     justify-content: center;
+    padding: .5rem 0;
     margin: 2rem 0 2rem 0;
 }
 
@@ -470,7 +471,6 @@ article {
 #contactForm .formElementGroup {
     flex-direction: column;
     justify-content: flex-start;
-    /* align-items: center; */
     gap: .5rem;
 }
 
@@ -483,19 +483,33 @@ article {
 #contactForm textarea {
     font-family: 'Asap Condensed', sans-serif;
     height: 6rem;
+    padding: .25rem;
+
+    border: solid thin var(--cusotmBlueOne);
+    border-radius: var(--defaultBorderRadius);
+    transition: all 250ms ease-in-out;
 }
 
 button {
     width: 10em;
     color: white;
-
+    font-size: 1rem;
     background-color: var(--customRed);
 
-    border: none;
+    border: solid thin transparent;
     border-radius: var(--defaultBorderRadius);
     padding: .5em;
     cursor: pointer;
     transition: all 250ms ease-in-out;
+}
+
+button:hover {
+    border: solid thin white;
+    transform: scale(102%);
+}
+
+button[type='reset']:hover {
+    box-shadow: .125rem .125rem .5rem var(--customRed);
 }
 
 
@@ -537,28 +551,25 @@ input {
     height: 1.5em;
 
     padding: .25rem;
-
     border: solid thin var(--cusotmBlueOne);
     border-radius: var(--defaultBorderRadius);
 
     transition: all 250ms ease-in-out;
 }
 
-input:not([type='radio']):focus {
+input:not([type='radio']):focus,
+#contactForm textarea:focus {
     outline: none;
     border: solid .25rem var(--customBlueTwo);
-    box-shadow: .125rem .125rem .5rem var(--cusotmBlueOne);
+    box-shadow: .12rem .12rem .5rem var(--cusotmBlueOne);
 }
 
 button[type='submit'] {
     background: var(--customBGgradient);
-    font-size: 1rem;
 }
 
 button[type='submit']:hover {
-    border: solid thin white;
     box-shadow: .125rem .125rem .5rem var(--cusotmBlueOne);
-    transform: scale(102%);
 }
 
 .loginLink {
@@ -592,6 +603,7 @@ footer {
 
     color: white;
     background-color: var(--customBlueTwo);
+
 }
 
 .footerBox {
@@ -691,6 +703,19 @@ footer {
         min-width: 20rem;
     }
 
+    #contactForm .fegContainer:not(:first-of-type) {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #contactForm .fegContainer:not(:first-of-type) > .formElementGroup {
+        flex: 1;
+    }
+
+    #contactForm .fegContainer > .formElementGroup * {
+        width: 100%;
+    }
+
     footer {
         flex-direction: row;
         flex-wrap: wrap;
@@ -745,9 +770,24 @@ footer {
         width: 90%;
     }
 
-    .formElementGroup {
+    #loginForm .formElementGroup {
         margin: 0 0 0 1rem;
     }
+
+    #contactForm .fegContainer:first-of-type {
+        justify-content: flex-start;
+    }
+
+    #contactForm .fegContainer:first-of-type .formElementGroup {
+        flex-direction: row;
+        width: initial;
+    }
+
+    #contactForm > .formElementGroup,
+    #contactForm > .formElementGroup *{
+        width: 100%;
+    }
+
 }
 
 /*----------------------------------------------------------------------------*/
