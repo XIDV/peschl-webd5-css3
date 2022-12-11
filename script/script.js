@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', dcl => {
-
+    const body = document.querySelector('body');
     const navButton = document.querySelector('#navButton');
     const pageNav = document.querySelector('#pageNav');
     const iccb = document.querySelector('#impCSwitch');
@@ -46,4 +46,5 @@ document.addEventListener('DOMContentLoaded', dcl => {
         !iccbStatus ? icc.style.right = '0' : icc.style.right = '-15rem';
         iccbStatus = !iccbStatus;
     }
+
 });

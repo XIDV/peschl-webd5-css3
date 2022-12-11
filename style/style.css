@@ -37,11 +37,14 @@
     --customYellow: #F9EA2E;
     --cusotmBlueOne: #1487E0;
     --customBlueTwo: #5B1FE0;
-    --customBGgradient: linear-gradient(.75turn, var(--cusotmBlueOne), var(--customBlueTwo));
+    --customBGgradient: linear-gradient(45deg, var(--cusotmBlueOne), var(--customBlueTwo));
+    --customBGgradientTwo: linear-gradient(270deg, var(--cusotmBlueOne), var(--customRed), var(--customBlueTwo));
+
     --customGlas: hsla(1, 0%, 100%, .5);
     --defaultBorderRadius: .5rem;
 
 }
+
 
 html {
     box-sizing: border-box;
@@ -632,14 +635,24 @@ footer {
     text-decoration: underline;
 }
 
-
-
 /*----------------------------------------------------------------------------*/
 /* Layout für Viewports ab 640px (40em)                                       */
 /*----------------------------------------------------------------------------*/
 @media screen and (min-width: 40em) {
+
+    @keyframes backgroundAnimation {
+        0% {
+            background-position: left;
+        }
+        100% {
+            background-position: right;
+        }
+    }
+
     body {
-        background: var(--customBGgradient);
+        background: var(--customBGgradientTwo);
+        background-size: 600%;
+        animation: backgroundAnimation 30s ease-in-out infinite alternate;
     }
 
     #smallNavHeader {
