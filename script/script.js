@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', dcl => {
-    const body = document.querySelector('body');
     const navButton = document.querySelector('#navButton');
     const pageNav = document.querySelector('#pageNav');
     const iccb = document.querySelector('#impCSwitch');
@@ -33,11 +32,10 @@ document.addEventListener('DOMContentLoaded', dcl => {
     }
 
     let navStatus = false;
-    function toggleMenu(e) {
+    function toggleMenu() {
         if(window.innerWidth < 1024) {
             !navStatus ? pageNav.style.height = '25rem' : pageNav.style.height = '0';
             navStatus = !navStatus;
-
         }
     }
 
