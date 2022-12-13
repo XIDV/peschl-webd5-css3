@@ -2,7 +2,7 @@
 
 Realisation der Praxisaufgabe in Form des Demo-Projekts "Tierrettung Essen e. V."
 
-Sebastian Pesch | &copy; 2022
+Sebastian Peschl | &copy; 2022
 
 ![Logo Tierrettund Essen e. V.](img/logo_icon.png)
 
